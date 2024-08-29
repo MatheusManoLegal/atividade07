@@ -1,5 +1,5 @@
 describe('Testando múltiplas páginas', () => {
-        it('Deve conseguir acessar a página de cartões', () => {
+    it('Deve conseguir acessar a página de cartões', {browser: 'edge'}, () => {	
         cy.visit('/')
         cy.getByData('botao-login').click()
         cy.getByData('email-input').type('neilton@alura.com')
@@ -9,7 +9,7 @@ describe('Testando múltiplas páginas', () => {
         cy.getByData('titulo-cartoes').should('exist').and('have.text', 'Meus cartões')
         cy.location('pathname').should('eq','/home/cartoes')
     })
-    it('Deve conseguir acessar a página de serviços', () => {
+    it('Deve conseguir acessar a página de serviços', {browser: 'edge'}, () => {	
         cy.visit('/')
         cy.getByData('botao-login').click()
         cy.getByData('email-input').type('neilton@alura.com')
@@ -19,7 +19,7 @@ describe('Testando múltiplas páginas', () => {
         cy.getByData('app-home').find('h5').contains('Pix')
         cy.location('pathname').should('eq','/home/servicos')
     })
-    it('Deve conseguir acessar a página de investimentos', () => {
+    it('Deve conseguir acessar a página de investimentos', {browser: 'edge'}, () => {	
         cy.visit('/')
         cy.getByData('botao-login').click()
         cy.getByData('email-input').type('neilton@alura.com')
